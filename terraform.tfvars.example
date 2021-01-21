@@ -1,0 +1,31 @@
+#
+# Terraform Azure Service Principal Credentials
+#
+azurerm_subscription_id = "<FILL_WITH_YOUR_AZURE_SUBSCRIPTION_ID>"
+azurerm_client_id       = "<FILL_WITH_YOUR_AZURE_CLIENT_ID>"
+azurerm_client_secret   = "<FILL_WITH_YOUR_AZURE_CLIENT_SECRET>"
+azurerm_tenant_id       = "<FILL_WITH_YOUR_AZURE_TENANT_ID>"
+
+name_prefix    = "<YOUR_CHOICE_OF_NAME_PREFIX>"
+hostname       = "app.terraform.io"
+organization   = "<YOUR_ORG_NAME_IN_TFC>"
+token          = "<YOUR_TFC_TOKEN>"
+oauth_token_id = "<YOUR_OAUTH_TOKEN_ID"
+
+#
+# Environments to have workspaces
+#
+environments   = ["dev", "qa"]
+
+workspaces = [
+  {
+    name                    = "firewall"
+    repo                    = "<YOUR_ORG>/module-az-firewall"
+    branch                  = "master"
+    tf_variables            = {}
+    tf_hcl_variables        = {}
+    tf_sensitive_variables  = {}
+    env_variables           = {}
+    env_sensitive_variables = {}
+  }
+]
